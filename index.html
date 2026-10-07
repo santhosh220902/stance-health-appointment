@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stance Health appointment booking">
+  <title>Book Your Appointment | Stance Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="booking-card" aria-label="Stance Health appointment booking">
+
+      <div class="hero">
+        <img src="assets/hero.jpg" alt="Stance Health clinic interior">
+      </div>
+
+      <header class="booking-header">
+        <div class="heading-icon" aria-hidden="true">
+          <span class="person-head"></span>
+          <span class="person-body"></span>
+        </div>
+
+        <h1>Book Your Appointment</h1>
+
+        <div class="stance-logo" aria-label="Stance Health">
+          <span class="bolt">ϟ</span>
+          <span class="logo-text">
+            <strong>STANCE</strong>
+            <small>HEALTH</small>
+          </span>
+        </div>
+      </header>
+
+      <div class="form-scroll">
+        <form id="appointmentForm" novalidate>
+          <p class="intro">Enter your phone number to get started</p>
+
+          <div class="field full">
+            <label for="phone">Phone Number <span>*</span></label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputmode="numeric"
+              autocomplete="tel"
+              maxlength="10"
+              placeholder="10-digit mobile number"
+              required
+            >
+            <small class="error" id="phoneError"></small>
+          </div>
+
+          <div class="two-col">
+            <div class="field">
+              <label for="firstName">First Name <span>*</span></label>
+              <input id="firstName" name="firstName" type="text" autocomplete="given-name"
+                     placeholder="First name" required>
+              <small class="error" id="firstNameError"></small>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" name="lastName" type="text" autocomplete="family-name"
+                     placeholder="Last name">
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" autocomplete="email"
+                   placeholder="your.email@example.com">
+            <small class="error" id="emailError"></small>
+          </div>
+
+          <fieldset class="gender-field">
+            <legend>Gender</legend>
+            <div class="gender-options">
+              <label class="gender-option selected">
+                <input type="radio" name="gender" value="Male" checked>
+                <span>Male</span>
+              </label>
+              <label class="gender-option">
+                <input type="radio" name="gender" value="Female">
+                <span>Female</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field full">
+            <label for="dob">Date of Birth</label>
+            <input id="dob" name="dob" type="date">
+          </div>
+
+          <div class="field full">
+            <label for="notes">Bio / Notes (Optional)</label>
+            <textarea id="notes" name="notes" rows="5"
+              placeholder="Add any additional information about the patient..."></textarea>
+          </div>
+
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <footer class="action-bar">
+        <button class="btn verify" id="verifyBtn" type="button">Verify Number</button>
+        <a class="btn call" id="callBtn" href="tel:+910000000000">Call Now</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
